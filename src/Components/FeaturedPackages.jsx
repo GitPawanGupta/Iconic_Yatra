@@ -1,8 +1,15 @@
 import React from 'react';
-import { Typography, Grid, Box, Link, Divider, Button, Paper } from '@mui/material';
+import {
+  Typography,
+  Grid,
+  Box,
+  Divider,
+  Button,
+} from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import PackageCard from '../Components/PackageCard';
 
+// Package data
 const packages = [
   {
     image: 'https://www.travserver.com/travelingfuns/uploads/packages/pkg_392/pkg_392_main.png?1751518453969',
@@ -20,7 +27,7 @@ const packages = [
   },
   {
     image: 'https://www.travserver.com/travelingfuns/uploads/packages/pkg_20/pkg_20_main.png?1751518453969',
-    title: 'Manali Volvo 3 Nights Tour : Ex Delhi',
+    title: 'Manali Volvo 3 Nights Tour ',
     id: '3',
     dpkg: '1',
     queryLink: 'https://example.com/query/manali',
@@ -64,9 +71,8 @@ const packages = [
 
 const FeaturedPackages = () => {
   return (
-    <Box sx={{ width: '100%', px: { xs: 2, sm: 3, md: 5 }, }}>
-      
-      {/* Section Title */}
+    <Box sx={{ px: 2, width: '100%', }}>
+      {/* Title */}
       <Box sx={{ mb: 3 }}>
         <Typography variant="h6" fontWeight="bold">
           FEATURE <span style={{ color: 'red' }}>PACKAGES</span>
@@ -74,49 +80,52 @@ const FeaturedPackages = () => {
         <Divider sx={{ mt: 1, borderColor: '#ccc', borderBottomWidth: 5 }} />
       </Box>
 
-      {/* Grid of Package Cards */}
-      <Grid container spacing={3}>
+      {/* Cards Grid */}
+      <Grid container spacing={3} sx={{backgroundPosition: 'center' , px: 1,  textAlign: 'center', justifyContent: 'center'}}>
         {packages.map((pkg, index) => (
           <Grid
             item
-            xs={12}
-            sm={6}
-            md={3}
+            xs={12}       // 1 column on mobile
+            sm={6}        // 2 columns on tablet
+            md={3}        // 4 columns on desktop
             key={index}
             sx={{
               display: 'flex',
-              justifyContent: 'center',
+              backgroundPosition:'center',justifyContent:'center'
             }}
           >
-            <PackageCard {...pkg} />
+            <Box sx={{ width: '100%', maxWidth: 320 }}>
+              <PackageCard {...pkg} />
+            </Box>
           </Grid>
         ))}
       </Grid>
 
-      {/* "Check More" Link */}
-       <Box
-      sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      <Button
-        component={RouterLink}
-        to="/"
-        variant="contained"
+      {/* "Click More" Button */}
+      <Box
         sx={{
-          width: '340px',
-          backgroundColor: '#4caf50',
-          color: '#fff',
-          fontWeight: 'bold',
-          textTransform: 'none',
-          '&:hover': { backgroundColor: '#43a047' },
+          mt: 4,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
-        Click More
-      </Button>
-    </Box>
+        <Button
+          component={RouterLink}
+          to="/"
+          variant="contained"
+          sx={{
+            width: { xs: '100%', sm: 300 },
+            backgroundColor: '#4caf50',
+            color: '#fff',
+            fontWeight: 'bold',
+            textTransform: 'none',
+            '&:hover': { backgroundColor: '#43a047' },
+          }}
+        >
+          Click More
+        </Button>
+      </Box>
     </Box>
   );
 };

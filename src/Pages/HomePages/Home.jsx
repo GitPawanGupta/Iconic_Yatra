@@ -36,14 +36,18 @@ const Home = () => {
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
 
-        <div className="carousel-inner" >
-          <div className="carousel-item active position-relative" >
+        <Box className="carousel-inner" sx={{width:'100%',}} >
+          <div className="carousel-item active position-relative"  >
             <img
               src="https://www.travserver.com/iconicyatra/uploads/packages/websitebanner/webpack_company/banner_10.jpg?1751479441893"
               className="d-block w-100"
               alt="Slide 1"
               backgroundposition="center"
+              
+              
+            
             />
+            
             <div className="carousel-caption d-none d-md-block">
              <Paper elevation={24} sx={{ p: 2, borderRadius: 3, backgroundColor: 'transparent', backdropFilter: 'blur(2px)' }}>
                  <Typography variant="h4"
@@ -67,6 +71,7 @@ const Home = () => {
               className="d-block w-100"
               alt="Slide 2"
               backgroundposition="center"
+              width="100vw"
             />
             <div className="carousel-caption d-none d-md-block">
               <Paper elevation={24} sx={{ p: 2, borderRadius: 3, backgroundColor: 'transparent', backdropFilter: 'blur(2px)' }}>
@@ -108,7 +113,7 @@ const Home = () => {
              </Paper>
             </div>
           </div>
-        </div>
+        </Box>
 
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -27,12 +27,12 @@ const PackageCard = ({ image, title, id, dpkg }) => {
   };
 
   return (
-    <Card sx={{ width: 320, borderRadius: 2, boxShadow: 3, margin: '10px', }}>
+    <Card sx={{ width: 280, borderRadius: 2, boxShadow: 3, margin: '15px', backgroundPosition:'center' }}>
       <CardActionArea
         onClick={Click}
         sx={{ position: 'relative' }}
       >
-        <CardMedia component="img" height="280" image={image} alt={title} />
+        <CardMedia component="img" height="260" image={image} alt={title} />
         <Box sx={{ position: 'absolute', bottom: 8, right: 8 }}>
           <Button variant="contained" size="small" sx={{ textTransform: 'none' }}>
             Send Query

@@ -92,137 +92,132 @@ const DomesticPackage = () => {
   };
 
   return (
-    <Box sx={{ px: 2, width: '100%', }}>
-      <Box sx={{ position: 'relative', overflow: 'hidden' }}>
-        <Box sx={{ px: 3 }}>
-      {/* Text content */}
-      <Typography variant="h6" fontWeight="bold">
-        DOMESTIC <span style={{ color: 'red' }}>PACKAGES</span>
-      </Typography>
-
-      {/* Line under the text */}
-      <Divider sx={{ mt: 1, borderColor: '#ccc', borderBottomWidth: 5 }} />
-     </Box>
-
-        {/* Left Arrow */}
-        <Box ml={0}>
-                  <IconButton
-          onClick={() => scroll('left')}
-          sx={{
-            position: 'absolute',
-            left: 10,
-            top: '65%',
-            transform: 'translateY(-50%)',
-            zIndex: 1,
-            backgroundColor: '#fff',
-          }}
-        >
-          <ChevronLeft />
-        </IconButton>
-        </Box>
-        
-        <Grid spacing={2} sx={{backgroundPosition: 'center' , px: 1,  textAlign: 'center', justifyContent: 'center'}}>
-        {/* Carousel */}
-        <Box
-          ref={scrollRef}
-          sx={{
-            display: 'flex',
-            gap: 2,
-            overflowX: 'auto',
-            overflowY: 'hidden',
-            scrollBehavior: 'smooth',
-            scrollSnapType: 'x mandatory',
-            py: 2,
-            px: 2,
-            '&::-webkit-scrollbar': { display: 'none' },
-          }}
-        >
-          {packages.map((pkg, i) => (
-            <Box
-              key={i}
-              onClick={() => Click(pkg.id, pkg.dpkg)}
-              sx={{
-                flex: `0 0 ${cardWidthPercent}%`,
-                height: isMobile ? 160 : isTablet ? 190 : 220,
-                borderRadius: '999px',
-                overflow: 'hidden',
-                boxShadow: 3,
-                backgroundImage: `url(${pkg.image})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                cursor: 'pointer',
-                scrollSnapAlign: 'center',
-                position: 'relative',
-              }}
-            >
-              {/* Inner Border */}
+      <Box sx={{ px: 2, width: '100%', }}>
+        <Box sx={{ position: 'relative', overflow: 'hidden' }}>
+           <Box sx={{ px: 3, py: 2 }}>
+        {/* Text content */}
+        <Typography variant="h6" fontWeight="bold">
+          DOMESTIC <span style={{ color: 'red' }}>PACKAGES</span>
+        </Typography>
+  
+        {/* Line under the text */}
+        <Divider sx={{ mt: 1, borderColor: '#ccc', borderBottomWidth: 5 }} />
+      </Box>
+  
+          {/* Left Arrow */}
+          <IconButton
+            onClick={() => scroll('left')}
+            sx={{
+              position: 'absolute',
+            
+              top: '65%',
+              transform: 'translateY(-50%)',
+              zIndex: 1,
+              backgroundColor: '#fff',
+            }}
+          >
+            <ChevronLeft />
+          </IconButton>
+  
+          {/* Carousel */}
+          <Grid spacing={2} sx={{backgroundPosition: 'center' , px: 1,  textAlign: 'center', justifyContent: 'center'}}>
+           <Box
+            ref={scrollRef}
+            sx={{
+              display: 'flex',
+              gap: 2,
+              overflowX: 'auto',
+              overflowY: 'hidden',
+              scrollBehavior: 'smooth',
+              scrollSnapType: 'x mandatory',
+              py: 2,
+              px: 2,
+              '&::-webkit-scrollbar': { display: 'none' },
+            }}
+          >
+            {packages.map((pkg, i) => (
               <Box
+                key={i}
+                onClick={() => handleClick(pkg.id, pkg.dpkg)}
                 sx={{
-                  position: 'absolute',
-                  inset: 10,
+                  flex: `0 0 ${cardWidthPercent}%`,
+                  height: isMobile ? 160 : isTablet ? 190 : 220,
                   borderRadius: '999px',
-                  border: '2px solid rgba(255, 255, 255, 0.5)',
-                  zIndex: 1,
-                }}
-              />
-              {/* Overlay */}
-              <Box
-                sx={{
-                  position: 'absolute',
-                  inset: 0,
-                  backgroundColor: 'rgba(0, 0, 0, 0.35)',
-                  borderRadius: '999px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  zIndex: 2,
-                  color: '#fff',
-                  textAlign: 'center',
-                  px: 2,
+                  overflow: 'hidden',
+                  boxShadow: 3,
+                  backgroundImage: `url(${pkg.image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  cursor: 'pointer',
+                  scrollSnapAlign: 'center',
+                  position: 'relative',
                 }}
               >
-                <Typography
-                  variant={isMobile ? 'body2' : 'body1'}
-                  fontWeight="bold"
-                  sx={{ mb: 1 }}
+                {/* Inner Border */}
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    inset: 10,
+                    borderRadius: '999px',
+                    border: '2px solid rgba(255, 255, 255, 0.5)',
+                    zIndex: 1,
+                  }}
+                />
+                {/* Overlay */}
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    inset: 0,
+                    backgroundColor: 'rgba(0, 0, 0, 0.35)',
+                    borderRadius: '999px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    zIndex: 2,
+                    color: '#fff',
+                    textAlign: 'center',
+                    px: 2,
+                  }}
                 >
-                  {pkg.title}
-                </Typography>
-                <Button
-                  variant="contained"
-                  size="small"
-                  sx={{ textTransform: 'none', fontSize: isMobile ? '0.7rem' : '0.8rem' }}
-                >
-                  Send Query
-                </Button>
+                  <Typography
+                    variant={isMobile ? 'body2' : 'body1'}
+                    fontWeight="bold"
+                    sx={{ mb: 1 }}
+                  >
+                    {pkg.title}
+                  </Typography>
+                  <Button
+                    variant="contained"
+                    size="small"
+                    sx={{ textTransform: 'none', fontSize: isMobile ? '0.7rem' : '0.8rem' }}
+                  >
+                    Send Query
+                  </Button>
+                </Box>
               </Box>
-            </Box>
-          ))}
+            ))}
+          </Box>
+          </Grid>
+          
+  
+          {/* Right Arrow */}
+          <IconButton
+            onClick={() => scroll('right')}
+            sx={{
+              position: 'absolute',
+              right: 10,
+              top: '65%',
+              transform: 'translateY(-50%)',
+              zIndex: 1,
+              backgroundColor: '#fff',
+            }}
+          >
+            <ChevronRight />
+          </IconButton>
         </Box>
-        </Grid>
-        </Box>
-
-
-        {/* Right Arrow */}
-        <IconButton
-          onClick={() => scroll('right')}
-          sx={{
-            position: 'absolute',
-            right: 10,
-            top: '65%',
-            transform: 'translateY(-50%)',
-            zIndex: 1,
-            backgroundColor: '#fff',
-          }}
-        >
-          <ChevronRight />
-        </IconButton>
-      
-        
-        </Box>
-    
-  );
+      </Box>
+    );
 };
 
 export default DomesticPackage;

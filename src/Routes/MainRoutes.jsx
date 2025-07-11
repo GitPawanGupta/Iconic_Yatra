@@ -1,9 +1,12 @@
+// src/MainRoutes.jsx
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import Layout from '../Components/Layout';
+
 import Payment from '../Pages/HeaderPages/Payment';
 import Service from '../Pages/HeaderPages/Service';
-//import News from '../Pages/HeaderPages/News';
-//import Admin from '../Pages/HeaderPages/Admin';
+// import News from '../Pages/HeaderPages/News';
+// import Admin from '../Pages/HeaderPages/Admin';
 import Home from '../Pages/HomePages/Home';
 import PackageCard from '../Components/PackageCard';
 import Holidays from '../Pages/HomePages/Holidays';
@@ -18,36 +21,32 @@ import SpecialPackages from '../Components/SpecialPackages';
 import PackageDetails from '../Components/PackageDetails';
 import Support from '../Pages/HomePages/Support';
 import WhyChooseUs from '../Components/WhyChooseUs';
-//import HolidayCarousel from '../Components/HolidayCarousel';
+// import HolidayCarousel from '../Components/HolidayCarousel';
 import DomesticPackage from '../Components/DomesticPackage';
 
 const MainRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home/>} />
-      <Route path="/payment" element={<Payment />} />
-      <Route path="/services" element={<Service />} />
-      {/* <Route path="/news" element={<News />} /> */}
-      {/* <Route path="/admin" element={<Admin />} /> */}
-      <Route path='/package-card' element={<PackageCard/>} />
-      <Route path='/holidays' element={<Holidays/>} />
-      <Route path='/testimonial' element={<Testimonial/>} />
-      <Route path='/contact' element={<Contects/>} />
-      <Route path='/featured-packages' element={<FeaturedPackages/>} />
-      <Route path="/special-packages" element={<SpecialPackages />} />
-      <Route path="/package-details" element={<PackageDetails />} />
-      <Route path="/fixed/:destination" element={<FixDeparture />} />
-      <Route path="/safari/:destination" element={<TigerSafari/>} />
-      <Route path="/domestic/:destination" element={<Domestic/>} />
-      <Route path="/international/:destination" element={<International/>} />
-      <Route path="/support" element={<Support />} />
-      <Route path='/why-choose-us' element={<WhyChooseUs />} />
-      <Route path='/domestic-packages' element={<DomesticPackage />} />
-
-
-
+      <Route path="/" element={<Layout><Home /></Layout>} />
+      <Route path="/payment" element={<Layout><Payment /></Layout>} />
+      <Route path="/services" element={<Layout><Service /></Layout>} />
+      {/* <Route path="/news" element={<Layout><News /></Layout>} /> */}
+      {/* <Route path="/admin" element={<Layout><Admin /></Layout>} /> */}
+      <Route path="/package-card" element={<Layout><PackageCard /></Layout>} />
+      <Route path="/holidays" element={<Layout><Holidays /></Layout>} />
+      <Route path="/testimonial" element={<Layout><Testimonial /></Layout>} />
+      <Route path="/contact" element={<Layout><Contects /></Layout>} />
+      <Route path="/featured-packages" element={<Layout><FeaturedPackages /></Layout>} />
+      <Route path="/special-packages" element={<Layout><SpecialPackages /></Layout>} />
+      <Route path="/package-details" element={<Layout><PackageDetails /></Layout>} />
+      <Route path="/fixed/:destination" element={<Layout><FixDeparture /></Layout>} />
+      <Route path="/safari/:destination" element={<Layout><TigerSafari /></Layout>} />
+      <Route path="/domestic/:destination" element={<Layout><Domestic /></Layout>} />
+      <Route path="/international/:destination" element={<Layout><International /></Layout>} />
+      <Route path="/support" element={<Layout><Support /></Layout>} />
+      <Route path="/why-choose-us" element={<Layout><WhyChooseUs /></Layout>} />
+      <Route path="/domestic-packages" element={<Layout><DomesticPackage /></Layout>} />
     </Routes>
-    
   );
 };
 
