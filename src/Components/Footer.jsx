@@ -11,6 +11,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import { Link as RouterLink } from 'react-router-dom';
+import Calendar from './Calendar';
 
 const Footer = () => {
   return (
@@ -97,6 +98,7 @@ const Footer = () => {
               <Typography variant="body2">support@iconicyatra.com</Typography>
             </Box>
           </Stack>
+          <Calendar/>
         </Grid>
       </Grid>
 
