@@ -35,6 +35,7 @@ const WhyChooseUs = () => {
   const navigate = useNavigate();
 
   return (
+    <Box sx={{py:5}}>
     <Box sx={{ textAlign: "center" }}>
       <Typography variant="h2" fontWeight="bold" gutterBottom>
         Why Choose Iconic Yatra?
@@ -94,6 +95,7 @@ const WhyChooseUs = () => {
           </Grid>
         ))}
       </Grid>
+    </Box>
     </Box>
   );
 };

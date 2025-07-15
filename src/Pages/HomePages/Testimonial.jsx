@@ -1,49 +1,156 @@
 import React from 'react';
+import Slider from 'react-slick';
 import {
   Box,
-  Breadcrumbs,
-  Link,
   Typography,
-  Container,
-  Paper,
+  Avatar,
+  IconButton,
 } from '@mui/material';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-const TestimonialPage = () => {
+const testimonials = [
+  {
+    name: 'Ankit Rajput',
+    location: 'Sikkim',
+    feedback:
+      'The overall plan by iconic travels was good. Very responsive to our queries. Highly recommend!',
+    image: 'https://randomuser.me/api/portraits/men/75.jpg',
+  },
+  {
+    name: 'Priya Sharma',
+    location: 'Delhi',
+    feedback:
+      'Amazing experience! Everything was smooth and perfectly managed.',
+    image: 'https://randomuser.me/api/portraits/women/44.jpg',
+  },
+  {
+    name: 'Ravi Mehta',
+    location: 'Mumbai',
+    feedback:
+      'Superb service. Our trip to Goa was memorable!',
+    image: 'https://randomuser.me/api/portraits/men/56.jpg',
+  },
+  {
+    name: 'Neha Gupta',
+    location: 'Lucknow',
+    feedback:
+      'Hassle-free bookings and excellent support. Highly recommended!',
+    image: 'https://randomuser.me/api/portraits/women/65.jpg',
+  },
+];
+
+const Testimonial = () => {
+  const sliderRef = React.useRef();
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 960,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <Box sx={{ backgroundColor: '#ebebeb', minHeight: '40vh', py: 4 }}>
-      <Container maxWidth="lg">
-        {/* Breadcrumb */}
-        <Paper elevation={1} sx={{ p: 2, mb: 4 }}>
-          <Breadcrumbs aria-label="breadcrumb">
-            <Link underline="hover" color="inherit" href="/">
-              Home
-            </Link>
-            <Typography color="text.primary">Testimonial</Typography>
-          </Breadcrumbs>
-        </Paper>
+    <Box sx={{ textAlign: 'center', py: 5, px: 2 }}>
+      <Typography variant="h4" fontWeight="bold" gutterBottom color="#0a0d3e">
+        TESTIMONIALS
+      </Typography>
 
-        {/* Title */}
-        <Typography variant="h5" gutterBottom>
-          Customer{' '}
-          <Box component="span" sx={{ color: '#d32f2f' }}>
-            Testimonials
-          </Box>
-        </Typography>
+      <Box sx={{ position: 'relative', width: '100%', maxWidth: '1200px', mx: 'auto' }}>
+        <Slider ref={sliderRef} {...settings}>
+          {testimonials.map((t, index) => (
+            <Box key={index} sx={{ px: 2 }}>
+              <Avatar
+                src={t.image}
+                alt={t.name}
+                sx={{
+                  width: 80,
+                  height: 80,
+                  mx: 'auto',
+                  mb: 1,
+                  border: '3px solid #1976d2',
+                }}
+              />
+              
+              <Typography
+                variant="h6"
+                color="#1976d2"
+                mt={1}
+                fontWeight="bold"
+              >
+                {t.name}
+              </Typography>
+              <Typography variant="body2" color="textSecondary">
+                {t.location}
+              </Typography>
+              <Typography
+                variant="body2"
+                fontStyle="italic"
+                color="textSecondary"
+                sx={{ px: 2 }}
+              >
+                {t.feedback}
+              </Typography>
+            </Box>
+          ))}
+        </Slider>
 
-        {/* No data message */}
-        <Box
+        {/* Arrows */}
+        <IconButton
+          onClick={() => sliderRef.current.slickPrev()}
           sx={{
-            mt: 8,
-            textAlign: 'center',
-            color: 'text.secondary',
-            fontSize: '1rem',
+            position: 'absolute',
+            top: '45%',
+            left: -20,
+            transform: 'translateY(-50%)',
+            backgroundColor: '#1976d2',
+            color: '#fff',
+            zIndex: 2,
+            '&:hover': { backgroundColor: '#115293' },
           }}
         >
-          No testimonial is available.
-        </Box>
-      </Container>
+          <ArrowBackIosNewIcon />
+        </IconButton>
+
+        <IconButton
+          onClick={() => sliderRef.current.slickNext()}
+          sx={{
+            position: 'absolute',
+            top: '45%',
+            right: -20,
+            transform: 'translateY(-50%)',
+            backgroundColor: '#1976d2',
+            color: '#fff',
+            zIndex: 2,
+            '&:hover': { backgroundColor: '#115293' },
+          }}
+        >
+          <ArrowForwardIosIcon />
+        </IconButton>
+      </Box>
     </Box>
   );
 };
 
-export default TestimonialPage;
+export default Testimonial;

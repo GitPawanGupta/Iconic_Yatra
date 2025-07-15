@@ -23,6 +23,8 @@ import Support from '../Pages/HomePages/Support';
 import WhyChooseUs from '../Components/WhyChooseUs';
 // import HolidayCarousel from '../Components/HolidayCarousel';
 import DomesticPackage from '../Components/DomesticPackage';
+import HolidaysPackages from '../Components/HolidaysPackages';
+import Gallery from '../Components/Gallery';
 
 const MainRoutes = () => {
   return (
@@ -46,6 +48,8 @@ const MainRoutes = () => {
       <Route path="/support" element={<Layout><Support /></Layout>} />
       <Route path="/why-choose-us" element={<Layout><WhyChooseUs /></Layout>} />
       <Route path="/domestic-packages" element={<Layout><DomesticPackage /></Layout>} />
+      <Route path="/holiday-packages" element={<Layout><HolidaysPackages /></Layout>} />
+      <Route path="/gallary" element={<Layout><Gallery /></Layout>} />
     </Routes>
   );
 };

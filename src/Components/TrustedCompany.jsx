@@ -45,13 +45,7 @@ const TrustedCompany = () => {
         experts and developers is evolving each day with new trends and
         technologies in the market, which allows us to stand out and lead the
         market. <br /><br />
-        With our company and our services in IT, you can take your business to
-        the new heights and dominate the market by targeting the actual audience
-        with the help of our Ecommerce services, getting them hooked and engaged
-        through our attractive and user friendly UI UX designs. For more
-        scalability and versatility of the web app you can also integrate
-        different platforms and business systems with the help of our API
-        development services. <br /><br />
+
       </Typography>
     </Box>
   );

@@ -30,7 +30,8 @@ const Achievements = () => {
         backgroundColor: '',
         px: 2,
         borderRadius: '0px',
-        mb:2
+        mb:2,
+        py:5
       }}
     >
       <Typography

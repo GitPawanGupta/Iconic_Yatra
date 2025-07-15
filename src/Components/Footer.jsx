@@ -18,7 +18,7 @@ const Footer = () => {
       <Grid container spacing={4}>
         {/* Payment Section */}
         <Grid item xs={12} md={3}>
-          <Typography variant="h6" sx={{ mb: 2, letterSpacing: 0.5 }}>
+          <Typography variant="h6" sx={{ mb: 2, letterSpacing: 0.5,py:2 }}>
             PAYMENT POWERED BY
           </Typography>
           <Stack direction="row" spacing={1.35} flexWrap="wrap">
@@ -67,6 +67,7 @@ const Footer = () => {
               fontWeight: 'bold',
               textTransform: 'none',
               '&:hover': { backgroundColor: '#43a047' },
+              py:2
             }}
           >
             ₹ Make Online Payment
@@ -74,9 +75,9 @@ const Footer = () => {
         </Grid>
 
         {/* Quick Links */}
-        <Grid item xs={12} sm={6} md={2} ml={15}>
-          <Typography variant="h6" sx={{ letterSpacing: 1.5 }}>
-            QUICK LINK
+        <Grid item xs={12} sm={6} md={2} ml={12}>
+          <Typography variant="h6" sx={{ letterSpacing:0.5, py:2 }}>
+            IMPORTANT LINK
           </Typography>
           <Stack spacing={1}>
             <Link component={RouterLink} to="/gujarat" underline="hover" color="inherit">› Gujarat</Link>
@@ -91,7 +92,7 @@ const Footer = () => {
 
         {/* Our Menu */}
         <Grid item xs={12} sm={6} md={3} ml={15}>
-          <Typography variant="h6" sx={{ letterSpacing: 1.5 }}>
+          <Typography variant="h6" sx={{ letterSpacing: 1.5, py:2 }}>
             OUR MENU
           </Typography>
           <Stack spacing={1}>
@@ -101,13 +102,13 @@ const Footer = () => {
             <Link component={RouterLink} to="/honeymoon" underline="hover" color="inherit">› Honeymoon tours</Link>
             <Link component={RouterLink} to="/international" underline="hover" color="inherit">› International tour</Link>
             <Link component={RouterLink} to="/contact" underline="hover" color="inherit">› Contact us</Link>
-            <Link component={RouterLink} to="/privacy-policy" underline="hover" color="inherit">› Privacy Policy</Link>
+            <Link component={RouterLink} to="https://newscollage.travserver.com/newstoday.html" underline="hover" color="inherit">› Latest News</Link>
           </Stack>
         </Grid>
 
         {/* Contact Us */}
         <Grid item xs={12} md={8} ml={15}>
-          <Typography variant="h6" sx={{ letterSpacing: 1.5 }}>
+          <Typography variant="h6" sx={{ letterSpacing: 1.5, py:2 }}>
             CONTACT US
           </Typography>
           <Stack spacing={1}>

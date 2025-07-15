@@ -85,7 +85,7 @@ const SpecialPackages = () => {
     return () => clearInterval(interval);
   }, [cardsToShow]);
 
-  const handleClick = (id, dpkg) => {
+  const Click = (id, dpkg) => {
     if (id && dpkg) {
       navigate(`/package-details?id=${id}&Dpkg=${dpkg}`);
     }
@@ -136,7 +136,7 @@ const SpecialPackages = () => {
             {packages.map((pkg, i) => (
               <Box
                 key={i}
-                onClick={() => handleClick(pkg.id, pkg.dpkg)}
+                onClick={() => Click(pkg.id, pkg.dpkg)}
                 sx={{
                   flex: `0 0 ${cardWidthPercent}%`,
                   height: isMobile ? 180 : isTablet ? 200 : 240,

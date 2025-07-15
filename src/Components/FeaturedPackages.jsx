@@ -75,7 +75,7 @@ const FeaturedPackages = () => {
       {/* Title */}
       <Box sx={{ mb: 3 }}>
         <Typography variant="h6" fontWeight="bold">
-          FEATURE <span style={{ color: 'red' }}>PACKAGES</span>
+          LATEST <span style={{ color: 'red' }}>PACKAGES</span>
         </Typography>
         <Divider sx={{ mt: 1, borderColor: '#ccc', borderBottomWidth: 5 }} />
       </Box>

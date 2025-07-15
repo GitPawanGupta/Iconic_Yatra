@@ -21,6 +21,9 @@ import TrustedCompany from '../../Components/TrustedCompany';
 import Achievements from '../../Components/Achievements';
 import SpecialPackages from '../../Components/SpecialPackages';
 //import SpecialPackages from '../../Components/SpecialPackages';
+import HolidaysPackages from '../../Components/HolidaysPackages';
+import Testimonial from './Testimonial';
+import Gallery from '../../Components/Gallery';
 
 const Home = () => {
   
@@ -128,13 +131,16 @@ const Home = () => {
       {/* Package Cards */}
       
       {/* <SpecialPackages/> */}
+      <WhyChooseUs />
       <TrustedCompany/>
       <PopularDestinations/>
       <DomesticPackage/>
       <InternationalPackage />
       <FeaturedPackages />
+      <HolidaysPackages/>
       <SpecialPackages />
-      <WhyChooseUs />
+      <Testimonial/>
+      <Gallery/>
       <Achievements/>
       
     </div>

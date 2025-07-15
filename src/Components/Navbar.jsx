@@ -111,6 +111,10 @@ const Navbar = () => {
                     <ListItem button component={Link} to="/contact" onClick={toggleDrawer}>
                       <ListItemText primary="Contact Us" />
                     </ListItem>
+                    <ListItem button component={Link} to="/services" onClick={toggleDrawer}>
+                      <ListItemText primary="Services" />
+                    </ListItem>
+                    
                   </List>
                 </Box>
               </Drawer>
@@ -151,7 +155,7 @@ const Navbar = () => {
               <Button component={Link} to="/holidays" sx={{ color: '#1f3c65', textTransform: 'none' }}>Holidays</Button>
               <Button component={Link} to="/testimonial" sx={{ color: '#1f3c65', textTransform: 'none' }}>Testimonial</Button>
               <Button component={Link} to="/contact" sx={{ color: '#1f3c65', textTransform: 'none' }}>Contact Us</Button>
-             
+              <Button component={Link} to="/services" sx={{ color: '#1f3c65', textTransform: 'none' }}>Services</Button>
             </Box>
           )}
         </Toolbar>

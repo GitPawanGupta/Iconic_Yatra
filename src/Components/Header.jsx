@@ -28,6 +28,7 @@ const Header = () => {
       <AppBar position="static" sx={{ bgcolor: '#1f3c65'}}>
       <Container maxWidth="xl">
         <Toolbar sx={{ justifyContent: 'space-between', flexWrap: 'wrap', px: 0 }}>
+          
           {/* Left Section */}
           <Stack direction="row" spacing={1.5} alignItems="center" flexWrap="wrap">
             <IconButton size="small" color="inherit" component="a" href="mailto:info@iconicyatra.com">
@@ -45,12 +46,21 @@ const Header = () => {
               |
             </Typography>
             <Typography variant="body2" sx={{ color: '#fff' }}>
-              📞 +917053900957 <strong> Support (24 X 7):</strong> +911202555001
+              <WhatsApp fontSize="small" /> +917053900957 
+            </Typography>
+            <Typography variant="body2" sx={{ color: '#fff' }}>
+              |
+            </Typography>
+            <Typography variant="body2" sx={{ color: '#fff' }}>
+             <strong> Support (24 X 7):</strong> +911202555001
+            </Typography>
+            <Typography variant="body2" sx={{ color: '#fff' }}>
+              |
             </Typography>
           </Stack>
 
           {/* Right Section */}
-          <Stack direction="row" spacing={1.5} alignItems="center" flexWrap="wrap" mt={isMobile ? 1 : 0} sx={{ ml: 3 }}>
+          <Stack direction="row" spacing={1.2} alignItems="center" flexWrap="wrap" mt={isMobile ? 1 : 0} sx={{ ml: 3 }}>
             <SearchIcon sx={{ color: 'white' }}  />
             <Typography variant="body2" color="white"  >Follow Us On</Typography>
             <IconButton size="small" color="inherit" href="https://facebook.com" target="_blank">
@@ -65,12 +75,6 @@ const Header = () => {
 
             <Link href="/payment" color="inherit" underline="none" sx={{ ml: 3, fontWeight: 600 }}>
               Payment Now
-            </Link>
-            <Link href="/services" color="inherit" underline="none" sx={{ mx: 2, fontWeight: 600 }}>
-              Service
-            </Link>
-            <Link href="https://newscollage.travserver.com/newstoday.html" color="inherit" underline="none" sx={{ mx: 2, fontWeight: 600 }}>
-              News
             </Link>
             <Link href="https://iconicyatra.travserver.com/crm/login" color="inherit" underline="none" sx={{ fontWeight: 600 }}>
               Admin
