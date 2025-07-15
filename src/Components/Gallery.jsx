@@ -31,7 +31,7 @@ const Gallery = () => {
 
   return (
     <Container sx={{ textAlign: 'center', py: 5, px: 2 }}>
-      <Typography variant="h4" fontWeight="bold" gutterBottom color="#0a0d3e">
+      <Typography variant="h4" fontWeight="bold" gutterBottom color="#0a0d3e" mb={5}>
         GALLERY
       </Typography>
 

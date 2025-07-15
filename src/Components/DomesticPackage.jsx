@@ -157,9 +157,9 @@ const DomesticPackage = () => {
                 <Box
                   sx={{
                     position: 'absolute',
-                    inset: 10,
+                    inset: 35,
                     borderRadius: '999px',
-                    border: '2px solid rgba(255, 255, 255, 0.5)',
+                    border: '5px solid rgba(255, 255, 255, 0.5)',
                     zIndex: 1,
                   }}
                 />
