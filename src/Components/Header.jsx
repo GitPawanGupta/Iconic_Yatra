@@ -18,6 +18,7 @@ import {
   WhatsApp
 } from '@mui/icons-material';
 import SearchIcon from '@mui/icons-material/Search';
+import SearchBar from './SearchBar';
 
 const Header = () => {
   const theme = useTheme();
@@ -54,14 +55,9 @@ const Header = () => {
             <Typography variant="body2" sx={{ color: '#fff' }}>
              <strong> Support (24 X 7):</strong> +911202555001
             </Typography>
-            <Typography variant="body2" sx={{ color: '#fff' }}>
-              |
-            </Typography>
-          </Stack>
-
-          {/* Right Section */}
-          <Stack direction="row" spacing={1.2} alignItems="center" flexWrap="wrap" mt={isMobile ? 1 : 0} sx={{ ml: 3 }}>
-            <SearchIcon sx={{ color: 'white' }}  />
+            
+            <SearchBar/>
+            <Stack direction="row" spacing={0.5} alignItems="center" flexWrap="wrap" mt={isMobile ? 1 : 0} sx={{ ml: 1 }}>
             <Typography variant="body2" color="white"  >Follow Us On</Typography>
             <IconButton size="small" color="inherit" href="https://facebook.com" target="_blank">
               <Facebook fontSize="small" />
@@ -72,14 +68,20 @@ const Header = () => {
             <IconButton size="small" color="inherit" href="https://wa.me/919999999999" target="_blank">
               <WhatsApp fontSize="small" />
             </IconButton>
-
-            <Link href="/payment" color="inherit" underline="none" sx={{ ml: 3, fontWeight: 600 }}>
+            </Stack>
+            <Typography variant="body2" sx={{ color: '#fff' }}>
+              |
+            </Typography>
+             <Link href="/payment" color="inherit" underline="none" sx={{ ml: 1, fontWeight: 600 }}>
               Payment Now
             </Link>
+            <Typography variant="body2" sx={{ color: '#fff' }}>
+              |
+            </Typography>
             <Link href="https://iconicyatra.travserver.com/crm/login" color="inherit" underline="none" sx={{ fontWeight: 600 }}>
               Admin
             </Link>
-          </Stack>
+          </Stack> 
         </Toolbar>
       </Container>
     </AppBar>
