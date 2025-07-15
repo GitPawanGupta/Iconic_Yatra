@@ -29,12 +29,13 @@ const ContactUs = () => {
               sx={{
                 background: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
                 borderRadius: 4,
-                p: 3,
                 color: 'white',
                 height: '100%',
+
               }}
             >
-              <Typography
+              <Box sx={{ml:2,width:'50%'}}>
+                <Typography
                 variant="subtitle1"
                 color="orange"
                 fontWeight="bold"
@@ -64,7 +65,7 @@ const ContactUs = () => {
                   <Typography fontWeight="bold">Corporate office</Typography>
                   <Typography>Office no. 47 & 48</Typography>
                   <Typography>
-                    2nd floor, Girnar Palace, Aditya Circle, GIDC-Vapi, Gujarat
+                    2nd floor, Girnar Palace, Aditya Circle,<br/> GIDC-Vapi, Gujarat
                   </Typography>
                   <Typography>Pincode 396191</Typography>
                 </Box>
@@ -82,6 +83,7 @@ const ContactUs = () => {
                   <Typography>info@iconicyatra.ln</Typography>
                 </Box>
               </Stack>
+              </Box>
             </Box>
           </Grid>
 
@@ -98,7 +100,7 @@ const ContactUs = () => {
                 <TextField
                  label="Your Message*"
                  multiline
-                 rows={10}
+                 rows={5}
                  fullWidth
                  required
                />
