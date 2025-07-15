@@ -18,60 +18,26 @@ const Footer = () => {
       <Grid container spacing={4}>
         {/* Payment Section */}
         <Grid item xs={12} md={3}>
-          <Typography variant="h6" sx={{ mb: 2, letterSpacing: 0.5,py:2 }}>
-            PAYMENT POWERED BY
-          </Typography>
-          <Stack direction="row" spacing={1.35} flexWrap="wrap">
-            {[...Array(5)].map((_, i) => (
-              <Box
-                key={i}
-                component="img"
-                src={`https://hindustanjourney.com/public/assets/frontend/img/p-method-${i + 1}.jpg`}
-                alt={`payment-${i + 1}`}
-                sx={{
-                  width: 60,
-                  height: 40,
-                  m: 0.5,
-                  bgcolor: '#fff',
-                  borderRadius: 1.5,
-                  objectFit: 'contain',
-                }}
-              />
-            ))}
-          </Stack>
+                   <Box component={Link} to="/" sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none', mt:2 }}>
+                     <img
+                       src="https://www.travserver.com/iconicyatra/uploads/logo/company/company_logo.png?1751446251815"
+                       alt="Logo"
+                       height="70"
+                       style={{ marginRight:'8px' }}
+                       backgroundPosition="center"
+                     />
+                     </Box>
+                     <Typography variant="h5" sx={{ letterSpacing:0.5, py:2 }}>
+                      About Iconic yatra.....
+                      </Typography>
+                      <Typography variant="body1" sx={{ color: '#ccc' }}>
+         Iconic Yatra is Best and Affordable<br/> 
+         online Travel Platform, offering <br/> 
+         an extensive range of travel<br/>  
+         solutions tailored to meet<br/>  
+         every travelers needs..........         
+        </Typography>
 
-          <Box
-            component="img"
-            src="https://hindustanjourney.com/public/assets/frontend/img/ministry-logo.jpg"
-            alt="Ministry of Corporate Affairs"
-            sx={{
-              width: '340px',
-              height: '80px',
-              mt: 2,
-              border: '1px solid #4caf50',
-              p: 1,
-              backgroundColor: '#fff',
-              borderRadius: 1,
-            }}
-          /><br/>
-
-          <Button
-            component={RouterLink}
-            to="/payment"
-            variant="contained"
-            sx={{
-              mt: 2,
-              width: '340px',
-              backgroundColor: '#4caf50',
-              color: '#fff',
-              fontWeight: 'bold',
-              textTransform: 'none',
-              '&:hover': { backgroundColor: '#43a047' },
-              py:2
-            }}
-          >
-            ₹ Make Online Payment
-          </Button>
         </Grid>
 
         {/* Quick Links */}
